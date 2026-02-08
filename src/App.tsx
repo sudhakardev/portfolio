@@ -26,7 +26,7 @@ const App = () => {
         />
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/Sudhakar-Portfolio">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
