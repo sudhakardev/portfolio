@@ -31,7 +31,7 @@ const AboutSection = () => {
               {/* Main Image Container */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10 shadow-[0_0_50px_rgba(0,242,255,0.3)] group-hover:shadow-[0_0_80px_rgba(0,242,255,0.5)] transition-all duration-700">
                 <img
-                  src="/sk.jpeg"
+                  src={`${import.meta.env.BASE_URL}sk.jpeg`}
                   alt="Sudhakar K"
                   className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100"
                 />
