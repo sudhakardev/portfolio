@@ -21,10 +21,23 @@ const HeroSection = () => {
           transition={{ duration: 1.2, ease: "circOut" }}
           className="flex flex-col items-center pt-24 sm:pt-32 md:pt-48"
         >
-          {/* Brand Heading - Larger on Mobile */}
+          {/* Brand Heading - Responsive Layout */}
           <div className="mb-8 sm:mb-12 w-full flex justify-center px-2 sm:px-4">
             <div className="inline-block px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-white/5 rounded-full border border-white/10 backdrop-blur-xl transition-all duration-500 hover:border-primary/40 max-w-full">
-              <span className="text-[10px] sm:text-xs md:text-base lg:text-lg font-mono text-primary font-black tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.25em] uppercase whitespace-nowrap block text-center">
+              {/* Mobile: Stacked Layout */}
+              <div className="block sm:hidden text-center">
+                <span className="text-[9px] font-mono text-primary font-black tracking-[0.15em] uppercase block mb-1">
+                  SYSTEM ARCHITECTURE
+                </span>
+                <span className="text-[9px] font-mono text-primary font-black tracking-[0.15em] uppercase block mb-1">
+                  DATA ANALYTICS
+                </span>
+                <span className="text-[9px] font-mono text-primary font-black tracking-[0.15em] uppercase block">
+                  NEURAL COMPUTING
+                </span>
+              </div>
+              {/* Desktop: Single Line */}
+              <span className="hidden sm:block text-xs md:text-base lg:text-lg font-mono text-primary font-black tracking-[0.15em] md:tracking-[0.25em] uppercase whitespace-nowrap text-center">
                 SYSTEM ARCHITECTURE • DATA ANALYTICS • NEURAL COMPUTING
               </span>
             </div>
