@@ -53,7 +53,7 @@ const HeroSection = () => {
           {/* CTA Buttons - Stacked on Mobile */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 w-full sm:w-auto px-4 sm:px-0">
             <a
-              href="https://drive.google.com/file/d/1Zn7qaX7VAdNof--t0FVPUvPBvLaOlsEw/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1EFEAtYr9ozHd7F5KpIOmh2QO1hUMmx5S/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-6 overflow-hidden rounded-full bg-primary text-black font-black tracking-[0.15em] sm:tracking-[0.2em] transition-all hover:scale-105 active:scale-95 w-full sm:w-auto text-center shadow-[0_0_50px_rgba(0,242,255,0.4)] uppercase text-sm sm:text-base"
