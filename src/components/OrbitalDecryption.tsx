@@ -224,9 +224,9 @@ const OrbitalDecryption = () => {
     }, []);
 
     return (
-        <div className="h-[500px] md:h-[600px] w-full relative">
+        <div className="h-[400px] md:h-[600px] w-full relative">
             <Canvas>
-                <PerspectiveCamera makeDefault position={[0, isMobile ? 6 : 4, isMobile ? 18 : 15]} fov={isMobile ? 60 : 50} />
+                <PerspectiveCamera makeDefault position={[0, isMobile ? 3 : 4, isMobile ? 12 : 15]} fov={isMobile ? 65 : 50} />
                 <SkillsScene />
             </Canvas>
         </div>

@@ -18,17 +18,17 @@ const SkillsSection = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="min-h-screen relative overflow-hidden bg-[#020408] flex flex-col items-center justify-center py-32"
+      className="relative overflow-hidden bg-[#020408] flex flex-col items-center pt-24 pb-12"
     >
       {/* High Contrast Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00f2ff08_1px,transparent_1px),linear-gradient(to_bottom,#00f2ff08_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
 
-      <div className="container mx-auto px-4 relative z-20 text-center mb-16">
+      <div className="container mx-auto px-4 relative z-20 text-center mb-2">
         <ScrollReveal>
           <div className="inline-block">
-            <div className="flex items-center gap-4 justify-center mb-6">
+            <div className="flex items-center gap-4 justify-center">
               <div className="w-3 h-3 rounded-full bg-primary shadow-[0_0_20px_rgba(0,242,255,0.8)] animate-pulse" />
-              <h2 className="text-5xl md:text-[6rem] font-black tracking-tighter text-white uppercase italic leading-none mb-4">
+              <h2 className="text-5xl md:text-[6rem] font-black tracking-tighter text-white uppercase italic leading-none">
                 ORBITAL <span className="text-glow-cyan">DECRYPTION</span>
               </h2>
             </div>
