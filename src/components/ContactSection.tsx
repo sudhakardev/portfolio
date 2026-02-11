@@ -56,7 +56,7 @@ const ContactSection = () => {
     { icon: Mail, label: "Gmail", href: "mailto:sudhakark4227@gmail.com", detail: "Direct Link" },
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/sudhakar-dev/", detail: "Expert Network" },
     { icon: Github, label: "GitHub", href: "https://github.com/sudhakardev", detail: "Source Repos" },
-    { icon: Code, label: "LeetCode", href: "https://leetcode.com/sudhakark4227", detail: "DSA Validated" }
+    { icon: Code, label: "LeetCode", href: "https://leetcode.com/sudhakardev", detail: "DSA Validated" }
   ];
 
   return (
