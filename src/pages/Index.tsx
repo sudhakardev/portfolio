@@ -1,12 +1,21 @@
+import { Suspense, lazy } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import SkillsSection from "@/components/SkillsSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import LogicPulse from "@/components/LogicPulse";
-import ProjectsSection from "@/components/ProjectsSection";
-import CertificationsSection from "@/components/CertificationsSection";
-import ContactSection from "@/components/ContactSection";
+
+// Lazy load heavy 3D and media-rich sections
+const SkillsSection = lazy(() => import("@/components/SkillsSection"));
+const ExperienceSection = lazy(() => import("@/components/ExperienceSection"));
+const LogicPulse = lazy(() => import("@/components/LogicPulse"));
+const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
+const CertificationsSection = lazy(() => import("@/components/CertificationsSection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+
+const SectionFallback = () => (
+  <div className="h-96 flex items-center justify-center bg-background">
+    <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
+  </div>
+);
 
 const Index = () => {
   return (
@@ -14,12 +23,15 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <LogicPulse />
-      <ProjectsSection />
-      <CertificationsSection />
-      <ContactSection />
+
+      <Suspense fallback={<SectionFallback />}>
+        <SkillsSection />
+        <ExperienceSection />
+        <LogicPulse />
+        <ProjectsSection />
+        <CertificationsSection />
+        <ContactSection />
+      </Suspense>
     </div>
   );
 };

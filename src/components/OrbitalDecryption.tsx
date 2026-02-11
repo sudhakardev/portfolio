@@ -55,8 +55,11 @@ const BinaryText = ({ text, revealed }: { text: string; revealed: boolean }) => 
 const SkillNode = ({ skill }: { skill: any }) => {
     const meshRef = useRef<THREE.Group>(null);
     const [hovered, setHovered] = useState(false);
-    const { mouse, viewport } = useThree();
-    const radius = skill.ring * 2.8;
+    const { mouse, viewport, size } = useThree();
+    const isMobile = size.width < 768;
+    const radiusMultiplier = isMobile ? 1.6 : 2.8;
+    const radius = skill.ring * radiusMultiplier;
+    const sphereSize = isMobile ? 0.22 : 0.35;
     const speed = 0.1 / skill.ring;
 
     useFrame((state) => {
@@ -87,7 +90,7 @@ const SkillNode = ({ skill }: { skill: any }) => {
     return (
         <group ref={meshRef}>
             <mesh onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)}>
-                <sphereGeometry args={[0.35, 32, 32]} />
+                <sphereGeometry args={[sphereSize, 24, 24]} />
                 <meshStandardMaterial
                     color={hovered ? "#ffffff" : "#00f2ff"}
                     emissive={hovered ? "#00f2ff" : "#00f2ff"}
@@ -152,11 +155,15 @@ const SkillNode = ({ skill }: { skill: any }) => {
 };
 
 const OrbitalRings = () => {
+    const { size } = useThree();
+    const isMobile = size.width < 768;
+    const radiusMultiplier = isMobile ? 1.6 : 2.8;
+
     return (
         <group>
             {[1, 2, 3].map((ring) => (
                 <mesh key={ring} rotation={[Math.PI / 2, 0, 0]}>
-                    <ringGeometry args={[ring * 2.8 - 0.03, ring * 2.8 + 0.03, 128]} />
+                    <ringGeometry args={[ring * radiusMultiplier - 0.02, ring * radiusMultiplier + 0.02, 64]} />
                     <meshBasicMaterial color="#00f2ff" transparent opacity={0.15} side={THREE.DoubleSide} />
                 </mesh>
             ))}
@@ -166,6 +173,9 @@ const OrbitalRings = () => {
 
 const SkillsScene = () => {
     const coreRef = useRef<THREE.Mesh>(null);
+    const { size } = useThree();
+    const isMobile = size.width < 768;
+    const coreSize = isMobile ? 0.8 : 1.4;
 
     useFrame((state) => {
         if (coreRef.current) {
@@ -177,7 +187,7 @@ const SkillsScene = () => {
     return (
         <group>
             <mesh ref={coreRef}>
-                <sphereGeometry args={[1.4, 64, 64]} />
+                <sphereGeometry args={[coreSize, 32, 32]} />
                 <MeshDistortMaterial
                     color="#00f2ff"
                     speed={2}
@@ -204,10 +214,19 @@ const SkillsScene = () => {
 };
 
 const OrbitalDecryption = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
-        <div className="h-[900px] w-full relative">
+        <div className="h-[500px] md:h-[600px] w-full relative">
             <Canvas>
-                <PerspectiveCamera makeDefault position={[0, 4, 15]} fov={50} />
+                <PerspectiveCamera makeDefault position={[0, isMobile ? 6 : 4, isMobile ? 18 : 15]} fov={isMobile ? 60 : 50} />
                 <SkillsScene />
             </Canvas>
         </div>
