@@ -57,9 +57,9 @@ const SkillNode = ({ skill }: { skill: any }) => {
     const [hovered, setHovered] = useState(false);
     const { mouse, viewport, size } = useThree();
     const isMobile = size.width < 768;
-    const radiusMultiplier = isMobile ? 1.6 : 2.8;
+    const radiusMultiplier = isMobile ? 2.2 : 2.8;
     const radius = skill.ring * radiusMultiplier;
-    const sphereSize = isMobile ? 0.22 : 0.35;
+    const sphereSize = isMobile ? 0.2 : 0.35;
     const speed = 0.1 / skill.ring;
 
     useFrame((state) => {
@@ -110,8 +110,8 @@ const SkillNode = ({ skill }: { skill: any }) => {
                 />
             )}
 
-            <Html distanceFactor={10} position={[0, 0, 0]} center>
-                <div className="relative flex flex-col items-center">
+            <Html distanceFactor={isMobile ? 12 : 10} position={[0, 0, 0]} center>
+                <div className="relative flex flex-col items-center scale-[0.7] sm:scale-100">
                     <AnimatePresence>
                         {!hovered && (
                             <motion.div
@@ -157,7 +157,7 @@ const SkillNode = ({ skill }: { skill: any }) => {
 const OrbitalRings = () => {
     const { size } = useThree();
     const isMobile = size.width < 768;
-    const radiusMultiplier = isMobile ? 1.6 : 2.8;
+    const radiusMultiplier = isMobile ? 2.2 : 2.8;
 
     return (
         <group>
@@ -224,9 +224,9 @@ const OrbitalDecryption = () => {
     }, []);
 
     return (
-        <div className="h-[400px] md:h-[600px] w-full relative">
+        <div className="h-[450px] md:h-[600px] w-full relative">
             <Canvas>
-                <PerspectiveCamera makeDefault position={[0, isMobile ? 3 : 4, isMobile ? 12 : 15]} fov={isMobile ? 65 : 50} />
+                <PerspectiveCamera makeDefault position={[0, isMobile ? 8 : 4, isMobile ? 22 : 15]} fov={isMobile ? 55 : 50} />
                 <SkillsScene />
             </Canvas>
         </div>

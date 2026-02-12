@@ -56,14 +56,17 @@ const SkillsSection = () => {
         className="absolute bottom-40 left-1/2 -translate-x-1/2 w-6 h-6 bg-primary rounded-full blur-2xl z-30 shadow-[0_0_100px_rgba(0,242,255,1)]"
       />
 
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center z-20">
-        <div className="px-6 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 mb-6">
-          <p className="text-[10px] font-mono text-primary/80 uppercase tracking-[0.4em]">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center z-20 w-full px-4">
+        <div className="px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 mb-4 inline-block">
+          <p className="text-[8px] sm:text-[10px] font-mono text-primary/80 uppercase tracking-[0.2em] sm:tracking-[0.4em]">
             Interact to probe skill nodes // Decryption_Enabled
           </p>
         </div>
-        <div className="w-1 h-20 bg-gradient-to-b from-primary to-transparent mx-auto rounded-full shadow-[0_0_20px_rgba(0,242,255,0.5)]" />
+        <div className="w-1 h-12 bg-gradient-to-b from-primary to-transparent mx-auto rounded-full shadow-[0_0_20px_rgba(0,242,255,0.5)]" />
       </div>
+
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#020408] to-transparent z-10" />
     </section>
   );
 };
