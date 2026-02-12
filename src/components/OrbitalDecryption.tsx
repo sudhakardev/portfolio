@@ -57,9 +57,9 @@ const SkillNode = ({ skill }: { skill: any }) => {
     const [hovered, setHovered] = useState(false);
     const { mouse, viewport, size } = useThree();
     const isMobile = size.width < 768;
-    const radiusMultiplier = isMobile ? 2.2 : 2.8;
+    const radiusMultiplier = isMobile ? 2.5 : 2.8;
     const radius = skill.ring * radiusMultiplier;
-    const sphereSize = isMobile ? 0.2 : 0.35;
+    const sphereSize = isMobile ? 0.3 : 0.35;
     const speed = 0.1 / skill.ring;
 
     useFrame((state) => {
@@ -110,17 +110,17 @@ const SkillNode = ({ skill }: { skill: any }) => {
                 />
             )}
 
-            <Html distanceFactor={isMobile ? 12 : 10} position={[0, 0, 0]} center>
-                <div className="relative flex flex-col items-center scale-[0.7] sm:scale-100">
+            <Html distanceFactor={isMobile ? 15 : 10} position={[0, 0.5, 0]} center>
+                <div className="relative flex flex-col items-center">
                     <AnimatePresence>
                         {!hovered && (
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
-                                className="px-4 py-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full shadow-lg shadow-black/50"
+                                className="px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/20 rounded-full shadow-lg shadow-black/50"
                             >
-                                <p className="text-white font-black text-xs uppercase tracking-widest whitespace-nowrap">
+                                <p className="text-white font-black text-[10px] sm:text-xs uppercase tracking-widest whitespace-nowrap">
                                     <BinaryText text={skill.name} revealed={true} />
                                 </p>
                             </motion.div>
@@ -157,7 +157,7 @@ const SkillNode = ({ skill }: { skill: any }) => {
 const OrbitalRings = () => {
     const { size } = useThree();
     const isMobile = size.width < 768;
-    const radiusMultiplier = isMobile ? 2.2 : 2.8;
+    const radiusMultiplier = isMobile ? 2.5 : 2.8;
 
     return (
         <group>
@@ -224,9 +224,9 @@ const OrbitalDecryption = () => {
     }, []);
 
     return (
-        <div className="h-[450px] md:h-[600px] w-full relative">
+        <div className="h-[500px] md:h-[600px] w-full relative">
             <Canvas>
-                <PerspectiveCamera makeDefault position={[0, isMobile ? 8 : 4, isMobile ? 22 : 15]} fov={isMobile ? 55 : 50} />
+                <PerspectiveCamera makeDefault position={[0, isMobile ? 6 : 4, isMobile ? 18 : 15]} fov={isMobile ? 60 : 50} />
                 <SkillsScene />
             </Canvas>
         </div>
