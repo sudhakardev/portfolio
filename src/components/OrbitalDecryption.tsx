@@ -1,4 +1,4 @@
-import { useRef, useMemo, useState, useEffect } from "react";
+import React, { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Text, Float, PerspectiveCamera, MeshDistortMaterial, Line, Html } from "@react-three/drei";
 import * as THREE from "three";
@@ -23,7 +23,7 @@ const skills = [
     { name: "Alteryx", ring: 1, angle: Math.PI / 2, category: "Insight HUD", desc: "ETL workflow automation" },
 ];
 
-const BinaryText = ({ text, revealed }: { text: string; revealed: boolean }) => {
+const BinaryText = React.memo(({ text, revealed }: { text: string; revealed: boolean }) => {
     const [display, setDisplay] = useState("");
     const binary = "01";
 
@@ -38,19 +38,19 @@ const BinaryText = ({ text, revealed }: { text: string; revealed: boolean }) => 
                 text
                     .split("")
                     .map((char, index) => {
-                        if (index < iterations) return char;
+                        if (index < Math.floor(iterations)) return char;
                         return binary[Math.floor(Math.random() * binary.length)];
                     })
                     .join("")
             );
             if (iterations >= text.length) clearInterval(interval);
-            iterations += 1 / 2;
-        }, 30);
+            iterations += 0.5;
+        }, 50);
         return () => clearInterval(interval);
     }, [text, revealed]);
 
     return <span className="font-mono">{display}</span>;
-};
+});
 
 const SkillNode = ({ skill }: { skill: any }) => {
     const meshRef = useRef<THREE.Group>(null);
@@ -62,6 +62,10 @@ const SkillNode = ({ skill }: { skill: any }) => {
     const sphereSize = isMobile ? 0.3 : 0.35;
     const speed = 0.1 / skill.ring;
 
+    const orbitPos = useMemo(() => new THREE.Vector3(), []);
+    const planePos = useMemo(() => new THREE.Vector3(), []);
+    const targetPos = useMemo(() => new THREE.Vector3(), []);
+
     useFrame((state) => {
         if (!meshRef.current) return;
 
@@ -69,12 +73,12 @@ const SkillNode = ({ skill }: { skill: any }) => {
         const x = Math.cos(time + skill.angle) * radius;
         const z = Math.sin(time + skill.angle) * radius;
 
-        const orbitPos = new THREE.Vector3(x, 0, z);
-        const planePos = new THREE.Vector3(mouse.x * viewport.width / 2, mouse.y * viewport.height / 2, 0);
+        orbitPos.set(x, 0, z);
+        planePos.set(mouse.x * viewport.width / 2, mouse.y * viewport.height / 2, 0);
         const dist = planePos.distanceTo(orbitPos);
         const threshold = 2.5;
 
-        const targetPos = orbitPos.clone();
+        targetPos.copy(orbitPos);
         if (dist < threshold) {
             const pull = Math.pow(1 - dist / threshold, 2) * 1.2;
             targetPos.lerp(planePos, pull);
@@ -154,7 +158,7 @@ const SkillNode = ({ skill }: { skill: any }) => {
     );
 };
 
-const OrbitalRings = () => {
+const OrbitalRings = React.memo(() => {
     const { size } = useThree();
     const isMobile = size.width < 768;
     const radiusMultiplier = isMobile ? 2.5 : 2.8;
@@ -163,13 +167,13 @@ const OrbitalRings = () => {
         <group>
             {[1, 2, 3].map((ring) => (
                 <mesh key={ring} rotation={[Math.PI / 2, 0, 0]}>
-                    <ringGeometry args={[ring * radiusMultiplier - 0.02, ring * radiusMultiplier + 0.02, 64]} />
+                    <ringGeometry args={[ring * radiusMultiplier - 0.02, ring * radiusMultiplier + 0.02, isMobile ? 32 : 64]} />
                     <meshBasicMaterial color="#00f2ff" transparent opacity={0.15} side={THREE.DoubleSide} />
                 </mesh>
             ))}
         </group>
     );
-};
+});
 
 const SkillsScene = () => {
     const coreRef = useRef<THREE.Mesh>(null);
@@ -187,16 +191,26 @@ const SkillsScene = () => {
     return (
         <group>
             <mesh ref={coreRef}>
-                <sphereGeometry args={[coreSize, 32, 32]} />
-                <MeshDistortMaterial
-                    color="#00f2ff"
-                    speed={2}
-                    distort={0.4}
-                    radius={1}
-                    emissive="#00f2ff"
-                    emissiveIntensity={3}
-                    metalness={1}
-                />
+                <sphereGeometry args={[coreSize, isMobile ? 16 : 32, isMobile ? 16 : 32]} />
+                {isMobile ? (
+                    <meshStandardMaterial
+                        color="#00f2ff"
+                        emissive="#00f2ff"
+                        emissiveIntensity={2}
+                        metalness={1}
+                        roughness={0}
+                    />
+                ) : (
+                    <MeshDistortMaterial
+                        color="#00f2ff"
+                        speed={2}
+                        distort={0.4}
+                        radius={1}
+                        emissive="#00f2ff"
+                        emissiveIntensity={3}
+                        metalness={1}
+                    />
+                )}
             </mesh>
 
             <pointLight position={[0, 0, 0]} intensity={10} color="#00f2ff" distance={15} />
@@ -224,9 +238,9 @@ const OrbitalDecryption = () => {
     }, []);
 
     return (
-        <div className="h-[500px] md:h-[600px] w-full relative">
-            <Canvas>
-                <PerspectiveCamera makeDefault position={[0, isMobile ? 6 : 4, isMobile ? 18 : 15]} fov={isMobile ? 60 : 50} />
+        <div className="h-[750px] md:h-[900px] w-full relative">
+            <Canvas dpr={[1, 1.5]} performance={{ min: 0.5 }}>
+                <PerspectiveCamera makeDefault position={[0, isMobile ? 14 : 6, isMobile ? 26 : 20]} fov={isMobile ? 55 : 45} />
                 <SkillsScene />
             </Canvas>
         </div>
