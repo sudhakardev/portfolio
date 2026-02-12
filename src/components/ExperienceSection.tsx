@@ -18,7 +18,7 @@ const ExperienceSection = () => {
               <Briefcase size={12} className="text-primary" />
             </div>
 
-            <div className="glass rounded-xl p-8 neon-border shadow-2xl bg-white/[0.02]">
+            <div className="glass rounded-xl p-6 md:p-8 neon-border shadow-2xl bg-white/[0.02]">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
                 <div>
                   <h3 className="text-2xl font-black text-white tracking-tight">Data Analyst Trainee</h3>

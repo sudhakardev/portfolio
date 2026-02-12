@@ -25,7 +25,7 @@ const Core = () => {
             <pointLight position={[0, 0, 0]} intensity={2} color="#00f2ff" />
 
             <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-                <Sphere ref={meshRef} args={[1, 64, 64]} onPointerOver={() => setHover(true)} onPointerOut={() => setHover(false)}>
+                <Sphere ref={meshRef} args={[1, 32, 32]} onPointerOver={() => setHover(true)} onPointerOut={() => setHover(false)}>
                     <MeshDistortMaterial
                         color={hovered ? "#00f2ff" : "#1a1a2e"}
                         distort={0.4}
