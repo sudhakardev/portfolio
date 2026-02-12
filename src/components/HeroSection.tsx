@@ -19,20 +19,17 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "circOut" }}
-          className="flex flex-col items-center pt-24 sm:pt-32 md:pt-48"
+          className="flex flex-col items-center pt-28 sm:pt-32 md:pt-48"
         >
           {/* Brand Heading - Responsive Layout */}
-          <div className="mb-8 sm:mb-12 w-full flex justify-center px-2 sm:px-4">
+          <div className="mb-6 sm:mb-12 w-full flex justify-center px-2 sm:px-4">
             <div className="inline-block px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-white/5 rounded-full border border-white/10 backdrop-blur-xl transition-all duration-500 hover:border-primary/40 max-w-full">
               {/* Mobile: Stacked Layout */}
               <div className="block sm:hidden text-center">
-                <span className="text-[9px] font-mono text-primary font-black tracking-[0.15em] uppercase block mb-1">
-                  SYSTEM ARCHITECTURE
+                <span className="text-[8px] font-mono text-primary font-black tracking-[0.1em] uppercase block mb-1">
+                  SYSTEM ARCHITECTURE • DATA ANALYTICS
                 </span>
-                <span className="text-[9px] font-mono text-primary font-black tracking-[0.15em] uppercase block mb-1">
-                  DATA ANALYTICS
-                </span>
-                <span className="text-[9px] font-mono text-primary font-black tracking-[0.15em] uppercase block">
+                <span className="text-[8px] font-mono text-primary font-black tracking-[0.1em] uppercase block">
                   NEURAL COMPUTING
                 </span>
               </div>
@@ -44,26 +41,26 @@ const HeroSection = () => {
           </div>
 
           {/* Main Heading - Bigger Name on Mobile */}
-          <div className="mb-10 sm:mb-12 md:mb-16 max-w-4xl px-2">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 font-extralight leading-tight tracking-tight">
+          <div className="mb-8 sm:mb-12 md:mb-16 max-w-4xl px-2">
+            <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-white/90 font-extralight leading-tight tracking-tight">
               Designing <span className="font-black text-white italic">scalable systems</span> where performance <br className="hidden sm:block" /> meets <span className="text-primary font-medium">predictive intelligence</span>.
             </p>
           </div>
 
           {/* CTA Buttons - Stacked on Mobile */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 w-full sm:w-auto px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 w-full sm:w-auto px-6 sm:px-0">
             <a
               href="https://drive.google.com/file/d/1EFEAtYr9ozHd7F5KpIOmh2QO1hUMmx5S/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-6 overflow-hidden rounded-full bg-primary text-black font-black tracking-[0.15em] sm:tracking-[0.2em] transition-all hover:scale-105 active:scale-95 w-full sm:w-auto text-center shadow-[0_0_50px_rgba(0,242,255,0.4)] uppercase text-sm sm:text-base"
+              className="group relative px-6 sm:px-10 md:px-14 py-3.5 sm:py-5 md:py-6 overflow-hidden rounded-full bg-primary text-black font-black tracking-[0.15em] sm:tracking-[0.2em] transition-all hover:scale-105 active:scale-95 w-full sm:w-auto text-center shadow-[0_0_50px_rgba(0,242,255,0.4)] uppercase text-xs sm:text-base"
             >
               <span className="relative z-10">Access Dossier</span>
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </a>
             <a
               href="#contact"
-              className="group px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-6 rounded-full border-2 border-primary/20 text-white font-bold tracking-[0.15em] sm:tracking-[0.2em] hover:bg-primary/10 hover:border-primary/50 transition-all w-full sm:w-auto text-center uppercase text-sm sm:text-base"
+              className="group px-6 sm:px-10 md:px-14 py-3.5 sm:py-5 md:py-6 rounded-full border-2 border-primary/20 text-white font-bold tracking-[0.15em] sm:tracking-[0.2em] hover:bg-primary/10 hover:border-primary/50 transition-all w-full sm:w-auto text-center uppercase text-xs sm:text-base"
             >
               Secure Connection
             </a>

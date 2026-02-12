@@ -114,7 +114,7 @@ const ProjectCarousel = () => {
     };
 
     return (
-        <div className="h-[550px] w-full relative flex items-center justify-center bg-[#020408]">
+        <div className="h-[480px] sm:h-[550px] w-full relative flex items-center justify-center bg-[#020408]">
             {/* 3D Kinetic Background */}
             <div className="absolute inset-0 pointer-events-none">
                 <Canvas>
@@ -126,7 +126,7 @@ const ProjectCarousel = () => {
             </div>
 
             {/* Micro Card Overlay */}
-            <div className="relative z-10 w-full max-w-sm px-6">
+            <div className="relative z-10 w-full max-w-[calc(100vw-3rem)] sm:max-w-sm px-2 sm:px-6">
                 <AnimatePresence mode="wait">
                     {!isSpinning && (
                         <motion.div

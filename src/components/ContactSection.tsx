@@ -79,24 +79,24 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-12 gap-12 max-w-6xl mx-auto items-center">
           {/* Left Side: Minimalist High-End Icons */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {socialLinks.map((link, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <a
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative h-40 bg-white/[0.02] border border-white/10 rounded-3xl flex flex-col items-center justify-center gap-3 hover:bg-primary/5 hover:border-primary/40 transition-all duration-500 overflow-hidden shadow-2xl"
+                  className="group relative h-32 sm:h-40 bg-white/[0.02] border border-white/10 rounded-3xl flex flex-col items-center justify-center gap-2 hover:bg-primary/5 hover:border-primary/40 transition-all duration-500 overflow-hidden shadow-2xl"
                 >
                   <div className="absolute top-0 right-0 p-3 opacity-[0.03] group-hover:opacity-10 transition-opacity">
-                    <link.icon size={80} />
+                    <link.icon size={60} />
                   </div>
-                  <div className="relative z-10 p-4 rounded-2xl bg-white/5 border border-white/10 text-white/50 group-hover:text-primary group-hover:scale-110 group-hover:border-primary/20 transition-all duration-500">
-                    <link.icon size={32} />
+                  <div className="relative z-10 p-3 rounded-2xl bg-white/5 border border-white/10 text-white/50 group-hover:text-primary group-hover:scale-110 group-hover:border-primary/20 transition-all duration-500">
+                    <link.icon size={24} />
                   </div>
                   <div className="text-center">
-                    <p className="text-xs font-black text-white uppercase tracking-tighter group-hover:text-primary transition-colors">{link.label}</p>
-                    <p className="text-[8px] font-mono text-white/30 uppercase tracking-widest mt-1">{link.detail}</p>
+                    <p className="text-[10px] sm:text-xs font-black text-white uppercase tracking-tighter group-hover:text-primary transition-colors">{link.label}</p>
+                    <p className="text-[7px] sm:text-[8px] font-mono text-white/30 uppercase tracking-widest mt-0.5">{link.detail}</p>
                   </div>
                 </a>
               </ScrollReveal>

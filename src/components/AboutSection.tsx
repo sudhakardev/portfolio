@@ -9,12 +9,12 @@ const stats = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 relative bg-[#020408] overflow-hidden">
+    <section id="about" className="py-16 md:py-24 relative bg-[#020408] overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal>
-          <div className="flex items-center gap-4 mb-12">
+          <div className="flex items-center gap-4 mb-8 md:mb-12">
             <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_10px_rgba(0,242,255,0.8)] animate-pulse" />
-            <h2 className="text-lg md:text-2xl font-mono font-black tracking-[0.3em] text-white uppercase">
+            <h2 className="text-base md:text-2xl font-mono font-black tracking-[0.3em] text-white uppercase">
               IDENTITY <span className="text-primary">MANIFEST</span>
             </h2>
           </div>
@@ -22,8 +22,8 @@ const AboutSection = () => {
 
         <div className="grid lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto">
           {/* Identity Image Module */}
-          <div className="lg:col-span-4 relative">
-            <div className="relative group mx-auto w-64 h-64 md:w-80 md:h-80">
+          <div className="lg:col-span-4 relative mb-8 lg:mb-0">
+            <div className="relative group mx-auto w-52 h-52 md:w-80 md:h-80">
               {/* Animated Background Rings */}
               <div className="absolute inset-0 rounded-full border border-primary/20 scale-110 group-hover:scale-125 transition-transform duration-1000 animate-[spin_10s_linear_infinite]" />
               <div className="absolute inset-0 rounded-full border border-primary/10 scale-125 group-hover:scale-150 transition-transform duration-1000 animate-[spin_15s_linear_infinite_reverse]" />
@@ -87,12 +87,12 @@ const AboutSection = () => {
             </ScrollReveal>
 
             {/* Analytics Grid - More Balanced Size */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {stats.map((s, i) => (
                 <ScrollReveal key={i} delay={300 + i * 100}>
-                  <div className="bg-white/[0.04] rounded-2xl p-5 text-center border border-white/10 hover:border-primary/40 hover:bg-white/[0.07] transition-all duration-500 group shadow-md">
-                    <p className="text-3xl font-black text-white group-hover:text-primary transition-all duration-300">{s.value}</p>
-                    <p className="text-[9px] font-mono text-white/40 uppercase tracking-[0.2em] mt-1 group-hover:text-primary/60 transition-colors">{s.label}</p>
+                  <div className="bg-white/[0.04] rounded-2xl p-4 text-center border border-white/10 hover:border-primary/40 hover:bg-white/[0.07] transition-all duration-500 group shadow-md flex items-center justify-between sm:flex-col sm:justify-center px-6 sm:px-4">
+                    <p className="text-2xl sm:text-3xl font-black text-white group-hover:text-primary transition-all duration-300">{s.value}</p>
+                    <p className="text-[10px] sm:text-[9px] font-mono text-white/40 uppercase tracking-[0.2em] group-hover:text-primary/60 transition-colors">{s.label}</p>
                   </div>
                 </ScrollReveal>
               ))}
