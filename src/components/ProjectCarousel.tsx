@@ -102,7 +102,7 @@ const ProjectCarousel = () => {
         setTimeout(() => {
             setActiveIndex((prev) => (prev + 1) % projects.length);
             setIsSpinning(false);
-        }, 800);
+        }, 200);
     };
 
     const prev = () => {
@@ -110,7 +110,7 @@ const ProjectCarousel = () => {
         setTimeout(() => {
             setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
             setIsSpinning(false);
-        }, 800);
+        }, 200);
     };
 
     return (

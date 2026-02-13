@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import ThreeDWrapper from "./ThreeDWrapper";
 import NeuralCore from "./NeuralCore";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -58,12 +59,12 @@ const HeroSection = () => {
               <span className="relative z-10">Access Dossier</span>
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </a>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="group px-6 sm:px-10 md:px-14 py-3.5 sm:py-5 md:py-6 rounded-full border-2 border-primary/20 text-white font-bold tracking-[0.15em] sm:tracking-[0.2em] hover:bg-primary/10 hover:border-primary/50 transition-all w-full sm:w-auto text-center uppercase text-xs sm:text-base"
             >
               Secure Connection
-            </a>
+            </Link>
           </div>
 
           {/* Social Links - Responsive Spacing */}
@@ -96,9 +97,9 @@ const HeroSection = () => {
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 z-20 text-primary/40"
       >
-        <a href="#about" className="group">
+        <Link to="/about" className="group">
           <ArrowDown size={32} strokeWidth={1} className="sm:w-10 sm:h-10 group-hover:text-primary group-hover:scale-110 transition-all duration-500" />
-        </a>
+        </Link>
       </motion.div>
     </section>
   );
