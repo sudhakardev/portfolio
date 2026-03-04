@@ -7,6 +7,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
     {
+        title: "STACKMATE",
+        description: "Solution: Built and published a production-ready backend toolkit that simplifies API development by handling authentication, logging, validation, and database operations.",
+        tech: ["PYTHON", "JWT", "REST APIs", "SQL/NoSQL", "PyPI"],
+        github: "https://pypi.org/project/stackmate/",
+        color: "#00f2ff",
+    },
+    {
+        title: "TRUSTLAYER",
+        description: "Solution: Developed a lightweight AI safety middleware that protects LLM-based applications from prompt injection, sensitive data leaks, and unsafe outputs. Acts as a guard layer between users and AI models to improve reliability and security.",
+        tech: ["PYTHON", "LLM", "AI SAFETY", "RISK SCORING", "PyPI"],
+        github: "https://pypi.org/project/trustlayer/",
+        color: "#00f2ff",
+    },
+    {
         title: "LLM Student Analytics",
         description: "Solution: Deployed an LLM-powered platform predicting student performance through behavioral and academic data integration.",
         tech: ["LLM", "Predictive Analytics", "React"],

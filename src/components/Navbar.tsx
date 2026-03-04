@@ -102,7 +102,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             className={cn(
               "font-black tracking-[0.3em] md:tracking-[0.5em] text-white uppercase transition-all duration-500 hover:text-primary cursor-pointer",
-              scrolled ? "text-sm md:text-xl mt-0" : "text-base md:text-3xl mt-1 md:mt-2"
+              scrolled ? "text-lg md:text-xl mt-0" : "text-2xl md:text-3xl mt-1 md:mt-2"
             )}
           >
             SUDHAKAR

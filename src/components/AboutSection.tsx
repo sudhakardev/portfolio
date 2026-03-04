@@ -9,10 +9,10 @@ const stats = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-16 md:py-24 relative bg-[#020408] overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="about" className="py-12 md:py-24 relative bg-[#020408] overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <ScrollReveal>
-          <div className="flex items-center gap-4 mb-8 md:mb-12">
+          <div className="flex items-center gap-4 mb-6 md:mb-12">
             <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_10px_rgba(0,242,255,0.8)] animate-pulse" />
             <h2 className="text-base md:text-2xl font-mono font-black tracking-[0.3em] text-white uppercase">
               IDENTITY <span className="text-primary">MANIFEST</span>
