@@ -51,7 +51,7 @@ const HeroSection = () => {
           {/* CTA Buttons - Vertical Stack on Mobile with less gap */}
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 md:gap-8 w-full sm:w-auto px-4 sm:px-0">
             <a
-              href="https://drive.google.com/file/d/1cfCCL-CiQcp5V1e8mkiRqIOORbmdQJDM/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Z6et78FUtUW83D7Z-CFXt406MgIhc5J4/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-6 sm:px-10 md:px-14 py-4 sm:py-5 md:py-6 overflow-hidden rounded-full bg-primary text-black font-black tracking-[0.15em] sm:tracking-[0.2em] transition-all hover:scale-105 active:scale-95 w-full sm:w-auto text-center shadow-[0_0_50px_rgba(0,242,255,0.4)] uppercase text-[10px] sm:text-base"

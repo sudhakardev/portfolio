@@ -120,12 +120,17 @@ const SkillsSection = () => {
         <ScrollReveal>
           <div className="mt-20 text-center">
             <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-transparent via-primary/50 to-transparent">
-              <div className="px-8 py-4 bg-[#020408] rounded-full flex items-center gap-4 group cursor-pointer hover:bg-[#0a0c10] transition-colors">
+              <a
+                href="https://drive.google.com/file/d/1Z6et78FUtUW83D7Z-CFXt406MgIhc5J4/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-[#020408] rounded-full flex items-center gap-4 group cursor-pointer hover:bg-[#0a0c10] transition-colors"
+              >
                 <span className="text-white/70 font-mono text-sm uppercase tracking-[0.2em]">
                   View Full Documentation
                 </span>
                 <Layout className="w-4 h-4 text-primary animate-pulse" />
-              </div>
+              </a>
             </div>
           </div>
         </ScrollReveal>

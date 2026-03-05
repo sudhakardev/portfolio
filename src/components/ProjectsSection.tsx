@@ -3,7 +3,7 @@ import ProjectCarousel from "./ProjectCarousel";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 md:py-32 relative overflow-hidden bg-[#020408]">
+    <section id="projects" className="min-h-[calc(100dvh-5rem)] py-20 md:py-32 relative overflow-hidden bg-[#020408] flex items-center">
       {/* Laser Lines Background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute top-1/2 left-0 w-full h-[1px] bg-primary animate-pulse" />

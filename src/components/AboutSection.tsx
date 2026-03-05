@@ -1,4 +1,4 @@
-import { MapPin, GraduationCap, Code, Trophy } from "lucide-react";
+import { MapPin, GraduationCap, Code, Trophy, FileText } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const stats = [
@@ -60,6 +60,17 @@ const AboutSection = () => {
                     <p className="text-white/80 leading-relaxed text-lg font-light max-w-3xl">
                       I <span className="text-primary font-medium">synthesize deep data analytics</span> with scalable engineering to transform raw intelligence into robust, functional ecosystems.
                     </p>
+                    <div className="mt-8">
+                      <a
+                        href="https://drive.google.com/file/d/1Z6et78FUtUW83D7Z-CFXt406MgIhc5J4/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary/20 transition-all group"
+                      >
+                        <span>Access Full Dossier</span>
+                        <FileText size={14} className="group-hover:scale-110 transition-transform" />
+                      </a>
+                    </div>
                   </div>
 
                   {/* Education Matrix - More Compact */}
