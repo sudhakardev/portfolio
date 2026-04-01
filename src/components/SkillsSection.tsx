@@ -121,7 +121,7 @@ const SkillsSection = () => {
           <div className="mt-20 text-center">
             <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-transparent via-primary/50 to-transparent">
               <a
-                href="https://drive.google.com/file/d/1Z6et78FUtUW83D7Z-CFXt406MgIhc5J4/view?usp=sharing"
+                href="https://drive.google.com/file/d/1GpPMdUcEATfWE4VQfGjw545Xw7K4-Ik9/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#020408] rounded-full flex items-center gap-4 group cursor-pointer hover:bg-[#0a0c10] transition-colors"

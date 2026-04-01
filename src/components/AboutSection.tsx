@@ -62,7 +62,7 @@ const AboutSection = () => {
                     </p>
                     <div className="mt-8">
                       <a
-                        href="https://drive.google.com/file/d/1Z6et78FUtUW83D7Z-CFXt406MgIhc5J4/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1GpPMdUcEATfWE4VQfGjw545Xw7K4-Ik9/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary/20 transition-all group"
